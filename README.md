@@ -1,0 +1,3 @@
+This repository demonstrates a common but easily overlooked error in C#: uninitialized properties within custom constructors.  When you explicitly define a constructor, C# doesn't automatically initialize properties to their default values.  This can lead to unexpected null reference exceptions or unexpected behavior if you assume the default value is present.
+
+The `Bug.cs` file illustrates the problem. The `MyProperty` is not initialized in the constructor, leading to an unexpected default value (0 for int). The `BugSolution.cs` file demonstrates the correct way to handle this; explicitly assigning a value to `MyProperty` within the constructor, or providing a default constructor which assigns it. 
